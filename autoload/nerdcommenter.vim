@@ -453,7 +453,7 @@ endif
 " ============================================================================
 
 " Function: nerdcommenter#SetUp() function
-" This function is responsible for setting up buffer scoped variables for the
+" " This function is responsible for setting up buffer scoped variables for the
 " current buffer.
 function! nerdcommenter#SetUp() abort
     if exists('b:NERDCommenterDelims')
@@ -1162,14 +1162,13 @@ function! nerdcommenter#IsLineCommented(lineNo) abort
 endfunction
 
 " Function: nerdcommenter#Comment(mode, type) function
-" This function is a Wrapper for the main commenting functions
-"
-" Args:
-"   -mode: a character indicating the mode in which the comment is requested:
-"   'n' for Normal mode, 'x' for Visual mode
-"   -type: the type of commenting requested. Can be 'Sexy', 'Invert',
-"    'Minimal', 'Toggle', 'AlignLeft', 'AlignBoth', 'Comment',
-"    'Nested', 'ToEOL', 'Append', 'Insert', 'Uncomment', 'Yank'
+" This function is a Wrapper for the main commenting ´functions´
+    " Args:
+    "   -mode: a character indicating the mode in which the comment is requested:
+    "           'n' for Normal mode, 'x' for Visual mode
+    "   -type: the type of commenting requested. Can be 'Sexy', 'Invert',
+    "            'Minimal', 'Toggle', 'AlignLeft', 'AlignBoth', 'Comment',
+    "            'Nested', 'ToEOL', 'Append', 'Insert', 'Uncomment', 'Yank'
 function! nerdcommenter#Comment(mode, type) range abort
     call nerdcommenter#SetUp()
     if exists('*NERDCommenter_before')
@@ -1307,7 +1306,7 @@ endfunction
 " Function: nerdcommenter#IsCharCommented(line, col) abort
 " Check if the character at [line, col] is inside a comment
 " Note the Comment delimeter it self is considered as part of the comment
-" 
+"
 " Args:
 "   -line       the line number of the character
 "   -col        the column number of the character
@@ -1315,7 +1314,7 @@ endfunction
 function! nerdcommenter#IsCharCommented(line, col) abort
   " Function: s:searchfor(str, line, col, direction, [maxline])
   " search str in the buffer, including the character at [line, col]
-  " Args: 
+  " Args:
   "   -str:       the string for search
   "   -line:      the line number where search begins
   "   -col:       the column number where search begins
@@ -1383,14 +1382,14 @@ function! nerdcommenter#IsCharCommented(line, col) abort
       let leftpos = s:searchfor(a:left, a:line, a:col, 1)
       if leftpos == [0, 0]
         if !blockcommented | let blockcommented = 0 | endif
-      else 
+      else
         " call s:searchfor(a:right, a:line, a:col, 0)
         let rightpos = s:searchfor(a:right, leftpos[0], leftpos[1] + strlen(a:right) + 1, 0)
         if rightpos != [0, 0]
           if rightpos[0] < a:line
             if !blockcommented | let blockcommented = 0 | endif
           elseif rightpos[0] == a:line
-            if !blockcommented 
+            if !blockcommented
               let blockcommented = (rightpos[1] + strlen(a:right) > a:col) ? 1 : 0
             endif
           else " rightpos > a:line
@@ -1404,14 +1403,14 @@ function! nerdcommenter#IsCharCommented(line, col) abort
     return linecommented || blockcommented
   endfunction
   return s:checkwith(
-          \ b:NERDCommenterDelims['left'], 
-          \ b:NERDCommenterDelims['right'], 
-          \ a:line, 
-          \ a:col) || 
+          \ b:NERDCommenterDelims['left'],
+          \ b:NERDCommenterDelims['right'],
+          \ a:line,
+          \ a:col) ||
         \ s:checkwith(
-          \ b:NERDCommenterDelims['leftAlt'], 
-          \ b:NERDCommenterDelims['rightAlt'], 
-          \ a:line, 
+          \ b:NERDCommenterDelims['leftAlt'],
+          \ b:NERDCommenterDelims['rightAlt'],
+          \ a:line,
           \ a:col)
 endfunction
 
@@ -1443,8 +1442,9 @@ endfunction
 " this function is called to remove the first left comment delimiter and the
 " last right delimiter of the given line.
 "
-" The arguments left and right must be strings. If there is no right delimiter (as
-" is the case for e.g vim file comments) them the argument right should be ''
+" The arguments left and right must be strings.
+"   If there is no right delimiter (as  is the case for e.g vim file comments)
+"   them the argument right should be ''
 "
 " Args:
 "   -left: the left comment delimiter
@@ -2522,9 +2522,9 @@ function! s:IsDelimValid(delimiter, delIndx, line) abort
         return 0
     endif
 
-    "vim comments are so fucking stupid!! Why the hell do they have comment
-    "delimiters that are used elsewhere in the syntax?!?! We need to check
-    "some conditions especially for vim
+    "vim comments are so fucking stupid!!
+    "Why the hell do they have comment  delimiters that are used elsewhere in the syntax?!?!
+    "We need to check  some conditions especially for vim
     if &filetype ==# 'vim'
         if !s:IsNumEven(s:CountNonESCedOccurances(preComStr, '"', "\\"))
             return 0
