@@ -241,9 +241,9 @@ Default mapping: |<Leader>|ci
 Mapped to: <plug>NERDCommenterInvert
 Applicable modes: normal visual-line.
 
-Inverts the commented state of each selected line. If the selected line is
-commented then it is uncommented and vice versa. Each line is examined and
-commented/uncommented individually.
+Inverts the commented state of each selected line.
+If the selected line is commented then it is uncommented and vice versa.
+Each line is examined and commented/uncommented individually.
 
 With this mapping, a line is only considered to be commented if it starts with
 a left delimiter.
@@ -1030,5 +1030,5 @@ support and bugfixes.
 license                                             *NERDCommenterLicense*
 
 NERD Commenter is released under the Creative-Commons CCO 1.0 Universal
-license. See the included LICENE file for details.
+DIY_again
 DIY_2  vim:filetype=help:syntax=help:

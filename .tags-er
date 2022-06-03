@@ -4,7 +4,7 @@
 !_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
 !_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
 !_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
-!_TAG_PROC_CWD	/home/wf/.local/share/nvim/PL/nerd_commenter/	//
+!_TAG_PROC_CWD	/home/wf/.local/share/nvim/PL/nerd-comment/	//
 !_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
@@ -20,8 +20,8 @@
 2.5.1	CHANGELOG.md	/^### 2.5.1$/;"	S	chapter:Changelog
 2.5.2	CHANGELOG.md	/^### 2.5.2$/;"	S	chapter:Changelog
 2.6.0	CHANGELOG.md	/^### 2.6.0$/;"	S	chapter:Changelog
-<Plug>NERDCommenterAltDelims	plugin/nerdcommenter.vim	/^nnoremap <Plug>NERDCommenterAltDelims :call nerdcommenter#SwitchToAlternativeDelimiters(1)<CR>$/;"	m
-<Plug>NERDCommenterInsert	plugin/nerdcommenter.vim	/^inoremap <silent> <Plug>NERDCommenterInsert <C-\\><C-O>:call nerdcommenter#Comment('i', "Insert"/;"	m
+<Plug>NERDCommenterAltDelims	plugin/nerdcommenter.vim	/^nno      <Plug>NERDCommenterAltDelims :call nerdcommenter#SwitchToAlternativeDelimiters(1)<CR>$/;"	m
+<Plug>NERDCommenterInsert	plugin/nerdcommenter.vim	/^ino      <silent> <Plug>NERDCommenterInsert   <C-\\><C-O>:call nerdcommenter#Comment('i', "Inser/;"	m
 Changelog	CHANGELOG.md	/^# Changelog$/;"	c
 Contributions	README.md	/^## Contributions$/;"	s	chapter:NERD Commenter
 Default mappings	README.md	/^### Default mappings$/;"	S	section:NERD Commenter""Usage
@@ -30,9 +30,9 @@ Installation	README.md	/^## Installation$/;"	s	chapter:NERD Commenter
 Manual Installation	README.md	/^### Manual Installation$/;"	S	section:NERD Commenter""Installation
 Motions	README.md	/^## Motions$/;"	s	chapter:NERD Commenter
 NERD Commenter	README.md	/^# NERD Commenter$/;"	c
-NERDComment	plugin/nerdcommenter.vim	/^function! NERDComment(mode, type) range$/;"	f
-NERDCommentIsCharCommented	plugin/nerdcommenter.vim	/^function! NERDCommentIsCharCommented(line, col)$/;"	f
-NERDCommentIsLineCommented	plugin/nerdcommenter.vim	/^function! NERDCommentIsLineCommented(lineNo)$/;"	f
+NERDComment	plugin/nerdcommenter.vim	/^    fun! NERDComment(mode, type) range$/;"	f
+NERDCommentIsCharCommented	plugin/nerdcommenter.vim	/^    fun! NERDCommentIsCharCommented(line, col)$/;"	f
+NERDCommentIsLineCommented	plugin/nerdcommenter.vim	/^    fun! NERDCommentIsLineCommented(lineNo)$/;"	f
 Post Installation	README.md	/^### Post Installation$/;"	S	section:NERD Commenter""Installation
 Settings	README.md	/^### Settings$/;"	S	section:NERD Commenter""Usage
 Unix	README.md	/^#### Unix$/;"	t	subsection:NERD Commenter""Installation""Manual Installation
@@ -43,89 +43,89 @@ Windows (PowerShell)	README.md	/^#### Windows (PowerShell)$/;"	t	subsection:NERD
 [Pathogen](https://github.com/tpope/vim-pathogen)	README.md	/^#### [Pathogen](https:\/\/github.com\/tpope\/vim-pathogen)$/;"	t	subsection:NERD Commenter""Installation""Via Plugin Manager (Recommended)
 [Vim-Plug](https://github.com/junegunn/vim-plug)	README.md	/^#### [Vim-Plug](https:\/\/github.com\/junegunn\/vim-plug)$/;"	t	subsection:NERD Commenter""Installation""Via Plugin Manager (Recommended)
 [Vundle](https://github.com/VundleVim/Vundle.vim) or similar	README.md	/^#### [Vundle](https:\/\/github.com\/VundleVim\/Vundle.vim) or similar$/;"	t	subsection:NERD Commenter""Installation""Via Plugin Manager (Recommended)
-g:NERDDelimiterMap	autoload/nerdcommenter.vim	/^let g:NERDDelimiterMap = s:delimiterMap$/;"	v
+g:NERDDelimiterMap	autoload/nerdcommenter.vim	/^    let g:NERDDelimiterMap = s:delimiterMap$/;"	v
 loaded_nerd_comments	plugin/nerdcommenter.vim	/^let loaded_nerd_comments = 1$/;"	v
-nerdcommenter#Comment	autoload/nerdcommenter.vim	/^function! nerdcommenter#Comment(mode, type) range abort$/;"	f
-nerdcommenter#IsCharCommented	autoload/nerdcommenter.vim	/^function! nerdcommenter#IsCharCommented(line, col) abort$/;"	f
-nerdcommenter#IsLineCommented	autoload/nerdcommenter.vim	/^function! nerdcommenter#IsLineCommented(lineNo) abort$/;"	f
-nerdcommenter#SetUp	autoload/nerdcommenter.vim	/^function! nerdcommenter#SetUp() abort$/;"	f
-nerdcommenter#SwitchToAlternativeDelimiters	autoload/nerdcommenter.vim	/^function! nerdcommenter#SwitchToAlternativeDelimiters(printMsgs) abort$/;"	f
-nerdcommenter#delimiterMap	autoload/nerdcommenter.vim	/^let nerdcommenter#delimiterMap = s:delimiterMap$/;"	v
-s:AddLeftDelim	autoload/nerdcommenter.vim	/^function! s:AddLeftDelim(delim, theLine) abort$/;"	f
-s:AddLeftDelimAligned	autoload/nerdcommenter.vim	/^function! s:AddLeftDelimAligned(delim, theLine, alignIndx) abort$/;"	f
-s:AddRightDelim	autoload/nerdcommenter.vim	/^function! s:AddRightDelim(delim, theLine) abort$/;"	f
-s:AddRightDelimAligned	autoload/nerdcommenter.vim	/^function! s:AddRightDelimAligned(delim, theLine, alignIndx) abort$/;"	f
-s:AltMultipart	autoload/nerdcommenter.vim	/^function! s:AltMultipart() abort$/;"	f
-s:AltNested	autoload/nerdcommenter.vim	/^function! s:AltNested() abort$/;"	f
-s:AppendCommentToLine	autoload/nerdcommenter.vim	/^function! s:AppendCommentToLine() abort$/;"	f
-s:CanCommentLine	autoload/nerdcommenter.vim	/^function! s:CanCommentLine(forceNested, lineNum) abort$/;"	f
-s:CanPlaceCursor	autoload/nerdcommenter.vim	/^function! s:CanPlaceCursor(line, col) abort$/;"	f
-s:CanSexyCommentLines	autoload/nerdcommenter.vim	/^function! s:CanSexyCommentLines(topline, bottomline) abort$/;"	f
-s:CanToggleCommentLine	autoload/nerdcommenter.vim	/^function! s:CanToggleCommentLine(forceNested, lineNum) abort$/;"	f
-s:CommentBlock	autoload/nerdcommenter.vim	/^function! s:CommentBlock(top, bottom, lSide, rSide, forceNested) abort$/;"	f
-s:CommentLines	autoload/nerdcommenter.vim	/^function! s:CommentLines(forceNested, align, firstLine, lastLine) abort$/;"	f
-s:CommentLinesMinimal	autoload/nerdcommenter.vim	/^function! s:CommentLinesMinimal(firstLine, lastLine) abort$/;"	f
-s:CommentLinesSexy	autoload/nerdcommenter.vim	/^function! s:CommentLinesSexy(topline, bottomline) abort$/;"	f
-s:CommentLinesToggle	autoload/nerdcommenter.vim	/^function! s:CommentLinesToggle(forceNested, firstLine, lastLine) abort$/;"	f
-s:CommentRegion	autoload/nerdcommenter.vim	/^function! s:CommentRegion(topLine, topCol, bottomLine, bottomCol, forceNested) abort$/;"	f
-s:ConvertLeadingSpacesToTabs	autoload/nerdcommenter.vim	/^function! s:ConvertLeadingSpacesToTabs(line) abort$/;"	f
-s:ConvertLeadingTabsToSpaces	autoload/nerdcommenter.vim	/^function! s:ConvertLeadingTabsToSpaces(line) abort$/;"	f
-s:ConvertLeadingWhiteSpace	autoload/nerdcommenter.vim	/^function! s:ConvertLeadingWhiteSpace(line) abort$/;"	f
-s:CountNonESCedOccurances	autoload/nerdcommenter.vim	/^function! s:CountNonESCedOccurances(str, searchstr, escChar) abort$/;"	f
-s:CreateDelimMapFromCms	autoload/nerdcommenter.vim	/^function! s:CreateDelimMapFromCms() abort$/;"	f
-s:CreateMaps	plugin/nerdcommenter.vim	/^function! s:CreateMaps(modes, target, desc, combo)$/;"	f
-s:DoesBlockHaveDelim	autoload/nerdcommenter.vim	/^function! s:DoesBlockHaveDelim(delim, top, bottom) abort$/;"	f
-s:DoesBlockHaveMultipartDelim	autoload/nerdcommenter.vim	/^function! s:DoesBlockHaveMultipartDelim(top, bottom) abort$/;"	f
-s:Esc	autoload/nerdcommenter.vim	/^function! s:Esc(str) abort$/;"	f
-s:FindBoundingLinesOfSexyCom	autoload/nerdcommenter.vim	/^function! s:FindBoundingLinesOfSexyCom(lineNum) abort$/;"	f
-s:FindDelimiterIndex	autoload/nerdcommenter.vim	/^function! s:FindDelimiterIndex(delimiter, line) abort$/;"	f
-s:GetSexyComLeft	autoload/nerdcommenter.vim	/^function! s:GetSexyComLeft(space, esc) abort$/;"	f
-s:GetSexyComMarker	autoload/nerdcommenter.vim	/^function! s:GetSexyComMarker(space, esc) abort$/;"	f
-s:GetSexyComRight	autoload/nerdcommenter.vim	/^function! s:GetSexyComRight(space, esc) abort$/;"	f
-s:HasCStyleComments	autoload/nerdcommenter.vim	/^function! s:HasCStyleComments() abort$/;"	f
-s:HasLeadingTabs	autoload/nerdcommenter.vim	/^function! s:HasLeadingTabs(...) abort$/;"	f
-s:HasMultipartDelims	autoload/nerdcommenter.vim	/^function! s:HasMultipartDelims() abort$/;"	f
+nerdcommenter#Comment	autoload/nerdcommenter.vim	/^fun! nerdcommenter#Comment(mode, type) range abort$/;"	f
+nerdcommenter#IsCharCommented	autoload/nerdcommenter.vim	/^fun! nerdcommenter#IsCharCommented(line, col) abort$/;"	f
+nerdcommenter#IsLineCommented	autoload/nerdcommenter.vim	/^fun! nerdcommenter#IsLineCommented(lineNo) abort$/;"	f
+nerdcommenter#SetUp	autoload/nerdcommenter.vim	/^fun! nerdcommenter#SetUp() abort$/;"	f
+nerdcommenter#SwitchToAlternativeDelimiters	autoload/nerdcommenter.vim	/^fun! nerdcommenter#SwitchToAlternativeDelimiters(printMsgs) abort$/;"	f
+nerdcommenter#delimiterMap	autoload/nerdcommenter.vim	/^    let nerdcommenter#delimiterMap = s:delimiterMap$/;"	v
+s:AddLeftDelim	autoload/nerdcommenter.vim	/^fun! s:AddLeftDelim(delim, theLine) abort$/;"	f
+s:AddLeftDelimAligned	autoload/nerdcommenter.vim	/^fun! s:AddLeftDelimAligned(delim, theLine, alignIndx) abort$/;"	f
+s:AddRightDelim	autoload/nerdcommenter.vim	/^fun! s:AddRightDelim(delim, theLine) abort$/;"	f
+s:AddRightDelimAligned	autoload/nerdcommenter.vim	/^fun! s:AddRightDelimAligned(delim, theLine, alignIndx) abort$/;"	f
+s:AltMultipart	autoload/nerdcommenter.vim	/^fun! s:AltMultipart() abort$/;"	f
+s:AltNested	autoload/nerdcommenter.vim	/^fun! s:AltNested() abort$/;"	f
+s:AppendCommentToLine	autoload/nerdcommenter.vim	/^fun! s:AppendCommentToLine() abort$/;"	f
+s:CanCommentLine	autoload/nerdcommenter.vim	/^fun! s:CanCommentLine(forceNested, lineNum) abort$/;"	f
+s:CanPlaceCursor	autoload/nerdcommenter.vim	/^fun! s:CanPlaceCursor(line, col) abort$/;"	f
+s:CanSexyCommentLines	autoload/nerdcommenter.vim	/^fun! s:CanSexyCommentLines(topline, bottomline) abort$/;"	f
+s:CanToggleCommentLine	autoload/nerdcommenter.vim	/^fun! s:CanToggleCommentLine(forceNested, lineNum) abort$/;"	f
+s:CommentBlock	autoload/nerdcommenter.vim	/^fun! s:CommentBlock(top, bottom, lSide, rSide, forceNested) abort$/;"	f
+s:CommentLines	autoload/nerdcommenter.vim	/^fun! s:CommentLines(forceNested, align, firstLine, lastLine) abort$/;"	f
+s:CommentLinesMinimal	autoload/nerdcommenter.vim	/^fun! s:CommentLinesMinimal(firstLine, lastLine) abort$/;"	f
+s:CommentLinesSexy	autoload/nerdcommenter.vim	/^fun! s:CommentLinesSexy(topline, bottomline) abort$/;"	f
+s:CommentLinesToggle	autoload/nerdcommenter.vim	/^fun! s:CommentLinesToggle(forceNested, firstLine, lastLine) abort$/;"	f
+s:CommentRegion	autoload/nerdcommenter.vim	/^fun! s:CommentRegion(topLine, topCol, bottomLine, bottomCol, forceNested) abort$/;"	f
+s:ConvertLeadingSpacesToTabs	autoload/nerdcommenter.vim	/^fun! s:ConvertLeadingSpacesToTabs(line) abort$/;"	f
+s:ConvertLeadingTabsToSpaces	autoload/nerdcommenter.vim	/^fun! s:ConvertLeadingTabsToSpaces(line) abort$/;"	f
+s:ConvertLeadingWhiteSpace	autoload/nerdcommenter.vim	/^fun! s:ConvertLeadingWhiteSpace(line) abort$/;"	f
+s:CountNonESCedOccurances	autoload/nerdcommenter.vim	/^fun! s:CountNonESCedOccurances(str, searchstr, escChar) abort$/;"	f
+s:CreateDelimMapFromCms	autoload/nerdcommenter.vim	/^fun! s:CreateDelimMapFromCms() abort$/;"	f
+s:CreateMaps	plugin/nerdcommenter.vim	/^fun! s:CreateMaps(modes, target, desc, combo)$/;"	f
+s:DoesBlockHaveDelim	autoload/nerdcommenter.vim	/^fun! s:DoesBlockHaveDelim(delim, top, bottom) abort$/;"	f
+s:DoesBlockHaveMultipartDelim	autoload/nerdcommenter.vim	/^fun! s:DoesBlockHaveMultipartDelim(top, bottom) abort$/;"	f
+s:Esc	autoload/nerdcommenter.vim	/^fun! s:Esc(str) abort$/;"	f
+s:FindBoundingLinesOfSexyCom	autoload/nerdcommenter.vim	/^fun! s:FindBoundingLinesOfSexyCom(lineNum) abort$/;"	f
+s:FindDelimiterIndex	autoload/nerdcommenter.vim	/^fun! s:FindDelimiterIndex(delimiter, line) abort$/;"	f
+s:GetSexyComLeft	autoload/nerdcommenter.vim	/^fun! s:GetSexyComLeft(space, esc) abort$/;"	f
+s:GetSexyComMarker	autoload/nerdcommenter.vim	/^fun! s:GetSexyComMarker(space, esc) abort$/;"	f
+s:GetSexyComRight	autoload/nerdcommenter.vim	/^fun! s:GetSexyComRight(space, esc) abort$/;"	f
+s:HasCStyleComments	autoload/nerdcommenter.vim	/^fun! s:HasCStyleComments() abort$/;"	f
+s:HasLeadingTabs	autoload/nerdcommenter.vim	/^fun! s:HasLeadingTabs(...) abort$/;"	f
+s:HasMultipartDelims	autoload/nerdcommenter.vim	/^fun! s:HasMultipartDelims() abort$/;"	f
 s:InitVariable	plugin/nerdcommenter.vim	/^function s:InitVariable(var, value)$/;"	f
-s:InvertComment	autoload/nerdcommenter.vim	/^function! s:InvertComment(firstLine, lastLine) abort$/;"	f
-s:IsCommented	autoload/nerdcommenter.vim	/^function! s:IsCommented(left, right, line) abort$/;"	f
-s:IsCommentedFromStartOfLine	autoload/nerdcommenter.vim	/^function! s:IsCommentedFromStartOfLine(left, line) abort$/;"	f
-s:IsCommentedNormOrSexy	autoload/nerdcommenter.vim	/^function! s:IsCommentedNormOrSexy(lineNum) abort$/;"	f
-s:IsCommentedOutermost	autoload/nerdcommenter.vim	/^function! s:IsCommentedOutermost(left, right, leftAlt, rightAlt, line) abort$/;"	f
-s:IsDelimValid	autoload/nerdcommenter.vim	/^function! s:IsDelimValid(delimiter, delIndx, line) abort$/;"	f
-s:IsEscaped	autoload/nerdcommenter.vim	/^function! s:IsEscaped(str, indx, escChar) abort$/;"	f
-s:IsInSexyComment	autoload/nerdcommenter.vim	/^function! s:IsInSexyComment(line) abort$/;"	f
-s:IsNumEven	autoload/nerdcommenter.vim	/^function! s:IsNumEven(num) abort$/;"	f
-s:IsSexyComment	autoload/nerdcommenter.vim	/^function! s:IsSexyComment(topline, bottomline) abort$/;"	f
-s:LastIndexOfDelim	autoload/nerdcommenter.vim	/^function! s:LastIndexOfDelim(delim, str) abort$/;"	f
-s:Left	autoload/nerdcommenter.vim	/^function! s:Left(...) abort$/;"	f
-s:LeftMostIndx	autoload/nerdcommenter.vim	/^function! s:LeftMostIndx(countCommentedLines, countEmptyLines, topline, bottomline) abort$/;"	f
-s:Multipart	autoload/nerdcommenter.vim	/^function! s:Multipart() abort$/;"	f
-s:NERDFileNameEscape	autoload/nerdcommenter.vim	/^let s:NERDFileNameEscape="[]#*$%'\\" ?`!&();<>\\\\"$/;"	v
-s:NerdEcho	autoload/nerdcommenter.vim	/^function! s:NerdEcho(msg, typeOfMsg) abort$/;"	f
-s:Nested	autoload/nerdcommenter.vim	/^function! s:Nested() abort$/;"	f
-s:NumLinesInBuf	autoload/nerdcommenter.vim	/^function! s:NumLinesInBuf() abort$/;"	f
-s:NumberOfLeadingTabs	autoload/nerdcommenter.vim	/^function! s:NumberOfLeadingTabs(s) abort$/;"	f
-s:PlaceDelimitersAndInsBetween	autoload/nerdcommenter.vim	/^function! s:PlaceDelimitersAndInsBetween() abort$/;"	f
-s:RecoverStateAfterLineComment	autoload/nerdcommenter.vim	/^function! s:RecoverStateAfterLineComment(state) abort$/;"	f
-s:RemoveDelimiters	autoload/nerdcommenter.vim	/^function! s:RemoveDelimiters(left, right, line) abort$/;"	f
-s:ReplaceDelims	autoload/nerdcommenter.vim	/^function! s:ReplaceDelims(toReplace1, toReplace2, replacor1, replacor2, str) abort$/;"	f
-s:ReplaceLeftMostDelim	autoload/nerdcommenter.vim	/^function! s:ReplaceLeftMostDelim(toReplace, replacor, str) abort$/;"	f
-s:ReplaceRightMostDelim	autoload/nerdcommenter.vim	/^function! s:ReplaceRightMostDelim(toReplace, replacor, str) abort$/;"	f
-s:Right	autoload/nerdcommenter.vim	/^function! s:Right(...) abort$/;"	f
-s:RightMostIndx	autoload/nerdcommenter.vim	/^function! s:RightMostIndx(countCommentedLines, countEmptyLines, topline, bottomline) abort$/;"	f
-s:SetupStateBeforeLineComment	autoload/nerdcommenter.vim	/^function! s:SetupStateBeforeLineComment(topLine, bottomLine) abort$/;"	f
-s:SexyNested	autoload/nerdcommenter.vim	/^function! s:SexyNested() abort$/;"	f
-s:SwapOuterMultiPartDelimsForPlaceHolders	autoload/nerdcommenter.vim	/^function! s:SwapOuterMultiPartDelimsForPlaceHolders(line) abort$/;"	f
-s:SwapOuterPlaceHoldersForMultiPartDelims	autoload/nerdcommenter.vim	/^function! s:SwapOuterPlaceHoldersForMultiPartDelims(line) abort$/;"	f
-s:TabSpace	autoload/nerdcommenter.vim	/^function! s:TabSpace() abort$/;"	f
-s:TrimTrailingWhitespace	autoload/nerdcommenter.vim	/^function! s:TrimTrailingWhitespace(line) abort$/;"	f
-s:UnEsc	autoload/nerdcommenter.vim	/^function! s:UnEsc(str, escChar) abort$/;"	f
-s:UncommentLineNormal	autoload/nerdcommenter.vim	/^function! s:UncommentLineNormal(line) abort$/;"	f
-s:UncommentLines	autoload/nerdcommenter.vim	/^function! s:UncommentLines(topLine, bottomLine) abort$/;"	f
-s:UncommentLinesNormal	autoload/nerdcommenter.vim	/^function! s:UncommentLinesNormal(topline, bottomline) abort$/;"	f
-s:UncommentLinesSexy	autoload/nerdcommenter.vim	/^function! s:UncommentLinesSexy(topline, bottomline) abort$/;"	f
-s:checkwith	autoload/nerdcommenter.vim	/^  function! s:checkwith(left, right, line, col) abort$/;"	f
-s:delimiterMap	autoload/nerdcommenter.vim	/^let s:delimiterMap = {$/;"	v
-s:lenSpaceStr	autoload/nerdcommenter.vim	/^let s:lenSpaceStr = strlen(s:spaceStr)$/;"	v
-s:searchfor	autoload/nerdcommenter.vim	/^  function! s:searchfor(str, line, col, direction, ...) abort$/;"	f
-s:spaceStr	autoload/nerdcommenter.vim	/^let s:spaceStr = ' '$/;"	v
+s:InvertComment	autoload/nerdcommenter.vim	/^fun! s:InvertComment(firstLine, lastLine) abort$/;"	f
+s:IsCommented	autoload/nerdcommenter.vim	/^fun! s:IsCommented(left, right, line) abort$/;"	f
+s:IsCommentedFromStartOfLine	autoload/nerdcommenter.vim	/^fun! s:IsCommentedFromStartOfLine(left, line) abort$/;"	f
+s:IsCommentedNormOrSexy	autoload/nerdcommenter.vim	/^fun! s:IsCommentedNormOrSexy(lineNum) abort$/;"	f
+s:IsCommentedOutermost	autoload/nerdcommenter.vim	/^fun! s:IsCommentedOutermost(left, right, leftAlt, rightAlt, line) abort$/;"	f
+s:IsDelimValid	autoload/nerdcommenter.vim	/^fun! s:IsDelimValid(delimiter, delIndx, line) abort$/;"	f
+s:IsEscaped	autoload/nerdcommenter.vim	/^fun! s:IsEscaped(str, indx, escChar) abort$/;"	f
+s:IsInSexyComment	autoload/nerdcommenter.vim	/^fun! s:IsInSexyComment(line) abort$/;"	f
+s:IsNumEven	autoload/nerdcommenter.vim	/^fun! s:IsNumEven(num) abort$/;"	f
+s:IsSexyComment	autoload/nerdcommenter.vim	/^fun! s:IsSexyComment(topline, bottomline) abort$/;"	f
+s:LastIndexOfDelim	autoload/nerdcommenter.vim	/^fun! s:LastIndexOfDelim(delim, str) abort$/;"	f
+s:Left	autoload/nerdcommenter.vim	/^fun! s:Left(...) abort$/;"	f
+s:LeftMostIndx	autoload/nerdcommenter.vim	/^fun! s:LeftMostIndx(countCommentedLines, countEmptyLines, topline, bottomline) abort$/;"	f
+s:Multipart	autoload/nerdcommenter.vim	/^fun! s:Multipart() abort$/;"	f
+s:NERDFileNameEscape	autoload/nerdcommenter.vim	/^    let s:NERDFileNameEscape="[]#*$%'\\" ?`!&();<>\\\\"$/;"	v
+s:NerdEcho	autoload/nerdcommenter.vim	/^fun! s:NerdEcho(msg, typeOfMsg) abort$/;"	f
+s:Nested	autoload/nerdcommenter.vim	/^fun! s:Nested() abort$/;"	f
+s:NumLinesInBuf	autoload/nerdcommenter.vim	/^fun! s:NumLinesInBuf() abort$/;"	f
+s:NumberOfLeadingTabs	autoload/nerdcommenter.vim	/^fun! s:NumberOfLeadingTabs(s) abort$/;"	f
+s:PlaceDelimitersAndInsBetween	autoload/nerdcommenter.vim	/^fun! s:PlaceDelimitersAndInsBetween() abort$/;"	f
+s:RecoverStateAfterLineComment	autoload/nerdcommenter.vim	/^fun! s:RecoverStateAfterLineComment(state) abort$/;"	f
+s:RemoveDelimiters	autoload/nerdcommenter.vim	/^fun! s:RemoveDelimiters(left, right, line) abort$/;"	f
+s:ReplaceDelims	autoload/nerdcommenter.vim	/^fun! s:ReplaceDelims(toReplace1, toReplace2, replacor1, replacor2, str) abort$/;"	f
+s:ReplaceLeftMostDelim	autoload/nerdcommenter.vim	/^fun! s:ReplaceLeftMostDelim(toReplace, replacor, str) abort$/;"	f
+s:ReplaceRightMostDelim	autoload/nerdcommenter.vim	/^fun! s:ReplaceRightMostDelim(toReplace, replacor, str) abort$/;"	f
+s:Right	autoload/nerdcommenter.vim	/^fun! s:Right(...) abort$/;"	f
+s:RightMostIndx	autoload/nerdcommenter.vim	/^fun! s:RightMostIndx(countCommentedLines, countEmptyLines, topline, bottomline) abort$/;"	f
+s:SetupStateBeforeLineComment	autoload/nerdcommenter.vim	/^fun! s:SetupStateBeforeLineComment(topLine, bottomLine) abort$/;"	f
+s:SexyNested	autoload/nerdcommenter.vim	/^fun! s:SexyNested() abort$/;"	f
+s:SwapOuterMultiPartDelimsForPlaceHolders	autoload/nerdcommenter.vim	/^fun! s:SwapOuterMultiPartDelimsForPlaceHolders(line) abort$/;"	f
+s:SwapOuterPlaceHoldersForMultiPartDelims	autoload/nerdcommenter.vim	/^fun! s:SwapOuterPlaceHoldersForMultiPartDelims(line) abort$/;"	f
+s:TabSpace	autoload/nerdcommenter.vim	/^fun! s:TabSpace() abort$/;"	f
+s:TrimTrailingWhitespace	autoload/nerdcommenter.vim	/^fun! s:TrimTrailingWhitespace(line) abort$/;"	f
+s:UnEsc	autoload/nerdcommenter.vim	/^fun! s:UnEsc(str, escChar) abort$/;"	f
+s:UncommentLineNormal	autoload/nerdcommenter.vim	/^fun! s:UncommentLineNormal(line) abort$/;"	f
+s:UncommentLines	autoload/nerdcommenter.vim	/^fun! s:UncommentLines(topLine, bottomLine) abort$/;"	f
+s:UncommentLinesNormal	autoload/nerdcommenter.vim	/^fun! s:UncommentLinesNormal(topline, bottomline) abort$/;"	f
+s:UncommentLinesSexy	autoload/nerdcommenter.vim	/^fun! s:UncommentLinesSexy(topline, bottomline) abort$/;"	f
+s:checkwith	autoload/nerdcommenter.vim	/^  fun! s:checkwith(left, right, line, col) abort$/;"	f
+s:delimiterMap	autoload/nerdcommenter.vim	/^    let s:delimiterMap = {$/;"	v
+s:lenSpaceStr	autoload/nerdcommenter.vim	/^    let s:lenSpaceStr = strlen(s:spaceStr)$/;"	v
+s:searchfor	autoload/nerdcommenter.vim	/^  fun! s:searchfor(str, line, col, direction, ...) abort$/;"	f
+s:spaceStr	autoload/nerdcommenter.vim	/^    let s:spaceStr = ' '$/;"	v
