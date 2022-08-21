@@ -489,7 +489,8 @@ fun! nerdcommenter#SetUp() abort
                 let b:NERDCommenterDelims[i] = 0
             en
         endfor
-        " if g:NERD_<filetype>_alt_style is defined, use the alternate style
+        " if g:NERD_<filetype>_alt_style is defined,
+        " use the alternate style
         let b:NERDCommenterFirstInit = getbufvar(1,'NERDCommenterFirstInit')
         if exists('g:NERDAltDelims_'.filetype) && eval('g:NERDAltDelims_'.filetype) && !b:NERDCommenterFirstInit
             call nerdcommenter#SwitchToAlternativeDelimiters(0)
@@ -2524,30 +2525,35 @@ fun! s:IsDelimValid(delimiter, delIndx, line) abort
         return 0
     en
 
-    "vim comments are so fucking stupid!!
-    "Why the hell do they have comment  delimiters that are used elsewhere in the syntax?!?!
-    "We need to check  some conditions especially for vim
+    " vim comments are so fucking stupid!!
+    " Why the hell do they have comment delimiters that are used elsewhere in the syntax?!?!
+    " We need to check  some conditions especially for vim
     if &filetype ==# 'vim'
         if !s:IsNumEven(s:CountNonESCedOccurances(preComStr, '"', "\\"))
             return 0
         en
 
-        "if the delimiter is on the very first char of the line or is the
-        "first non-tab/space char on the line then it is a valid comment delimiter
-        if a:delIndx ==# 0 || a:line =~# "^\s\\{" . a:delIndx . "\\}\".*$"
+        " if the delimiter is on the very first char of the line or
+        " is the  first non-tab/space char on the line
+            " then it is a valid comment delimiter
+        if a:delIndx ==# 0
+     \ || a:line =~# "^\s\\{" . a:delIndx . "\\}\".*$"
             return 1
         en
 
         let numLeftParen =s:CountNonESCedOccurances(preComStr, '(', '\\')
+
         let numRightParen =s:CountNonESCedOccurances(preComStr, ')', '\\')
 
-        "if the quote is inside brackets then assume it isn't a comment
+        " if the quote is inside brackets
+            " then assume it isn't a comment
         if numLeftParen > numRightParen
             return 0
         en
 
-        "if the line has an even num of unescaped "'s then we can assume that
-        "any given " is not a comment delimiter
+        " if the line has an even num of unescaped  ¿"¿
+            " then we can assume that
+            " any given " is not a comment delimiter
         if s:IsNumEven(s:CountNonESCedOccurances(a:line, '"', '\\'))
             return 0
         en
